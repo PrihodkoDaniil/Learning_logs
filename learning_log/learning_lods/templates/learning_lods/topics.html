@@ -1,0 +1,13 @@
+{% extends 'learning_lods/base.html' %}
+{% block content %}
+  <p>Topic: {{ topic }}</p>
+  <p>Entries:</p>
+  <ul>
+    {% for topic in topics %}
+      <li>{{ topic }}</li>
+    {% empty %}
+      <li>No topics ¯\_(ツ)_/¯</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'learning_lods:new_topic' %}">Add a new topic:</a>
+{% endblock content %}
